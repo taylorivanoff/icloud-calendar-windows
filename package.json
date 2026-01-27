@@ -1,32 +1,19 @@
 {
   "name": "icloud-calendar",
   "description": "View your iCloud calendar in a native Windows application.",
-  "author": {
-    "name": "Taylor Ivanoff"
-  },
-  "version": "1.0.6",
+  "author": { "name": "Taylor Ivanoff" },
+  "version": "1.0.7",
   "repository": "https://github.com/taylorivanoff/icloud-calendar-windows",
   "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "release": "electron-builder --win --x64 --publish=never"
-  },
+  "scripts": { "start": "electron .", "release": "electron-builder --win --x64 --publish=never" },
   "build": {
     "appId": "io.github.taylorivanoff.icloud-calendar",
     "productName": "iCloud Calendar",
-    "win": {
-      "icon": "icon.png",
-      "target": "nsis"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "include": "installer.nsh",
-      "deleteAppDataOnUninstall": true
-    }
+    "win": { "icon": "icon.png", "target": "nsis" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "include": "installer.nsh", "deleteAppDataOnUninstall": true },
+    "publish": { "provider": "github", "owner": "taylorivanoff", "repo": "icloud-calendar-windows" },
+    "protocols": { "name": "iCloud Calendar", "schemes": ["icloud-calendar"] }
   },
-  "devDependencies": {
-    "electron": "^30.0.3",
-    "electron-builder": "^24.13.3"
-  }
+  "dependencies": { "electron-store": "^8.2.0", "electron-updater": "^6.1.8" },
+  "devDependencies": { "electron": "^30.0.3", "electron-builder": "^24.13.3" }
 }
