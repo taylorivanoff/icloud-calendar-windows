@@ -2,7 +2,7 @@
   "name": "icloud-calendar",
   "description": "View your iCloud calendar in a native Windows application.",
   "author": { "name": "Taylor Ivanoff" },
-  "version": "1.0.7",
+  "version": "1.0.8",
   "repository": "https://github.com/taylorivanoff/icloud-calendar-windows",
   "main": "main.js",
   "scripts": { "start": "electron .", "release": "electron-builder --win --x64 --publish=never" },

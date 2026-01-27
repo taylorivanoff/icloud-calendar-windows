@@ -134,8 +134,6 @@ function createTray() {
   tray.setContextMenu(Menu.buildFromTemplate([
     { label: `Show ${APP_NAME}`, click: () => { if (!mainWindow) createWindow(); mainWindow.show(); } },
     { type: 'separator' },
-    { label: 'New Event', click: () => { if (!mainWindow) createWindow(); mainWindow.show(); mainWindow.webContents.executeJavaScript('document.querySelector("[data-click=showquickeventpopover]")?.click()'); } },
-    { type: 'separator' },
     { label: 'Check for Updates', click: () => autoUpdater.checkForUpdatesAndNotify() },
     { label: 'Quit', click: () => { isQuitting = true; app.quit(); } }
   ]));
@@ -143,11 +141,7 @@ function createTray() {
 }
 
 function setupJumpList() {
-  app.setJumpList([
-    { type: 'tasks', items: [
-      { type: 'task', title: 'New Event', description: 'Create a new calendar event', program: process.execPath, args: `${PROTOCOL}://new`, iconPath: process.execPath, iconIndex: 0 }
-    ]}
-  ]);
+  app.setJumpList([]);
 }
 
 function setupAutoUpdater() {
