@@ -30,5 +30,6 @@ loadIcloudWindowsBase().run({
   protocol: 'icloud-calendar',
   icloudUrl: 'https://www.icloud.com/calendar',
   splashPath: path.join(__dirname, 'splash.html'),
-  iconPath: path.join(__dirname, 'icon.png')
+  iconPath: path.join(__dirname, 'icon.png'),
+  removeToolbar: true
 });
